@@ -41,10 +41,12 @@ def UDTask(id):
                     "name":vName,
                     "status":vStatus
                 }
-            msg = data
+                msg = data
+            else :
+                msg = 'no data be updated'            
         except:
             db.rollback()
-            msg = 'U error'
+            msg = 'Update error'
         finally:
             db.close()
             #return render_template('result.html',result=msg),200
